@@ -14,7 +14,7 @@ func RoleCheck(next echo.HandlerFunc) echo.HandlerFunc {
 		//получение значения заголовка
 		val := ctx.Request().Header.Get("User-Role")
 		if strings.EqualFold(val, roleAdmin) {
-			log.Println("red button user detected")
+			log.Println("admin detected")
 		}
 		//вызов обработчика
 		err := next(ctx)
